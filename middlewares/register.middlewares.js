@@ -65,7 +65,7 @@ exports.account = catchAsync(async (req, _, next) => {
   let web_name;
 
   const [acc_name, acc_email] = await Promise.all([
-    Accounts.Account.findOne({ where: { name: username }}),
+    Accounts.Account.findOne({ where: { username }}),
     Accounts.Account.findOne({ where: { email: email.toLowerCase() }}),
   ]);
 
